@@ -238,3 +238,18 @@ $(document).ready(function() {
         var modalContent = document.getElementById('modal-content');
         modalContent.innerHTML = "ที่อยู่ :  57 ถ.ไสน้ำเย็น ต.ป่าตอง อ.กะทู้ จ.ภูเก็ต 83150 <br> Patong Hospital : 57 sainamyen Rd., Patong, Kathu, Phuket 83150 Thailand";
     });
+
+
+// ใช้ window.onscroll เพื่อตรวจจับเหตุการณ์เมื่อมีการเลื่อนหน้าจอ
+window.onscroll = function() {
+  var navbar = document.querySelector('.nav'); // ตัวแปร navbar เก็บ element ของ Navbar
+
+  // เช็คเงื่อนไขว่า scrollY (ตำแหน่งที่เลื่อน) มากกว่าหรือเท่ากับ 100px (ตัวอย่าง)
+  if (window.scrollY > 100) {
+    navbar.classList.add('navbar-scrolled'); // เพิ่มคลาส navbar-scrolled เมื่อเลื่อนลง
+  } else {
+    navbar.classList.remove('navbar-scrolled'); // ลบคลาส navbar-scrolled เมื่อเลื่อนขึ้นสูงกว่า 100px
+  }
+};
+
+

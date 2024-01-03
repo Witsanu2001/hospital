@@ -39,7 +39,7 @@ $row = mysqli_fetch_assoc($result);
         if ($result->num_rows > 0) {
             foreach ($result as $row) {
                 // แสดงลิงก์สำหรับ ita_id ที่อยู่ใน $row
-                echo '<a href="ita.php">' . $row["year"] . '</a>';
+                echo '<a href="ita.php?id=' . $row["ita_id"] . '">' . $row["year"] . '</a>';
             }
         } else {
             echo "ไม่พบข้อมูล";

@@ -419,3 +419,23 @@
   align-items: center;
 }
 
+/* สร้างคลาสใหม่สำหรับ Navbar เมื่อมีการเลื่อนลง */
+.navbar-scrolled {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* กำหนดสีพื้นหลังหรือสไตล์เพิ่มเติมตามต้องการ */
+  background-color: #fff; /* เปลี่ยนสีพื้นหลังเป็นสีขาวเมื่อ Navbar เลื่อนลง */
+  /* เพิ่ม transition เพื่อให้การเปลี่ยนแปลงเป็นเรื่องของการลื่นไหล */
+  transition: background-color 0.3s ease-in-out;
+  z-index: 9999; /* ตั้งค่า z-index ให้ Navbar แสดงเหนือส่วนอื่นๆ บนหน้าจอ */
+}
+
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  transition: top 0.3s ease-in-out;
+  background-color: #fff
+}

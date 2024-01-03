@@ -2,11 +2,12 @@
 require('./api/connect.php');
 
 $objCon = connectDB();
-$strSQL = "SELECT * FROM moit";
+$id = $_GET['id'];
+$strSQL = "SELECT * FROM moit WHERE ita_id = $id";
 $objQuery = mysqli_query($objCon, $strSQL);
 
-  
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -57,11 +58,20 @@ $objQuery = mysqli_query($objCon, $strSQL);
     
 
     <nav class="nav link d-flex flex-wrap justify-content-between">
-    <?php include "nav-link.php"; ?>
-</nav>
+        <?php include "nav-link.php"; ?>
+    </nav>
+</div>
 </div>
 
+
     <br>
+    <br>
+    <div class="col-md-8">        
+        <?php include "button-menu.php"; ?> 
+    </div>
+    <h4 class="pb-4 mb-4 fst-italic border-bottom d-flex">   
+        <div class="welcome-text text-center">ITA</div>
+    </h4>
     
       
     <div class="accordion" id="accordionExample">

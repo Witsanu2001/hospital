@@ -9,7 +9,7 @@ $row = mysqli_fetch_assoc($result);
 ?>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <div class="dropdown d-lg-none" style=" margin-left: -40px;">
+  <div class="dropdown d-lg-none" style=" margin-left: -5px;">
   <div class="dropdown" >
     <button class="btn btn-primary " type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fa-solid fa-bars"></i>
@@ -36,20 +36,21 @@ $row = mysqli_fetch_assoc($result);
       <li>
         <button class="dropdown-item" type="button" onclick="toggleSubMenu(event)">ITA</button>
         <ul class="submenu" style="display: none;">
-          <li><button class="dropdown-item" type="button">
-            <?php
-            // ตรวจสอบว่ามีข้อมูลในตัวแปร $result หรือไม่ก่อนใช้งาน
-            if ($result->num_rows > 0) {
-                foreach ($result as $row) {
-                    // แสดงลิงก์สำหรับ ita_id ที่อยู่ใน $row
-                    echo '<a href="ita.php">' . $row["year"] . '</a>';
-                }
-            } else {
-                echo "ไม่พบข้อมูล";
-            }
-            ?>
-        </button></li>
-        </ul>
+        <?php
+          // ตรวจสอบว่ามีข้อมูลในตัวแปร $result หรือไม่ก่อนใช้งาน
+          if ($result->num_rows > 0) {
+              foreach ($result as $row) {
+                  // แสดงลิงก์สำหรับ ita_id ที่อยู่ใน $row
+                  echo '<li><a href="ita.php?id=' . $row["ita_id"] . '">' . $row["year"] . '</a></li>';
+              }
+          } else {
+              echo "<li>ไม่พบข้อมูล</li>";
+          }
+          ?>
+          </ul>
+
+      </li>
+
       </li>
       <li>
         <button class="dropdown-item" type="button" onclick="toggleSubMenu(event)">ติดต่อโรงพยาบาล</button>
