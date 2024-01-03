@@ -7,7 +7,6 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
     <?php include "header-link.php"; ?>
-    <script src="index.js"></script>
 
   </head>
   <body>
@@ -17,28 +16,24 @@
   <div class="container">
     <?php include "header.php"; ?>
   </div>
-  <main  class="container">
+      <main  class="container">
           <div class="slide-container">
             <?php include "slide-page.php"; ?>
           </div>
-            <link rel="stylesheet" href="index2.css">
-            <nav class="nav link d-flex flex-wrap justify-content-between fixed-bottom-nav">
+          <link rel="stylesheet" href="index2.css">
+            <nav class="nav link d-flex flex-wrap justify-content-between">
               <?php include "nav-link.php"; ?>
             </nav>
-            
-
-            
-          
-
+          <script src="person.js"></script>
           <br>
           <div class="row g-5">
               <div class="col-md-8">        
-                  
+              <h4 class="pb-4 mb-4 fst-italic border-bottom d-flex">       
                 
                       <?php include "button-menu.php"; ?>
                 
-              <h4 class="pb-4 mb-4 fst-italic border-bottom d-flex">   
-                <div class="welcome-text text-center">ยินดีตอนรับโรงพยาบาลป่าตอง</div>
+                
+                <div class="welcome-text text-center">ยินดีต้อนรับโรงพยาบาลป่าตอง</div>
               </h4>             
               <!-- HTML ของการ์ด -->
               <div class="row" style="cursor: pointer;">
@@ -74,13 +69,13 @@
                 <div class="row-calendar">
                   <div class="col-md-12 calendar">
                   <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTz=0&amp;height=260&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=web.patonghospital%40gmail.com&amp;color=%23528800&amp;src=th.th%23holiday%40group.v.calendar.google.com&amp;color=%232952A3&amp;ctz=Asia%2FBangkok" 
-                  style=" border-width:0 " width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+                  style=" border-width:0 " width="110%" height="400" frameborder="0" scrolling="no"></iframe>
                   </div>
                 </div>
                 <br>
                 <h4 class="fst-italic">หน่วยงานที่เกี่ยวข้อง</h4>
                   <ol class="list-unstyled">
-                      <center>
+                      <center  style="width: 390px;">
                         <a href="https://pkto.moph.go.th/" target="_blank">
                           <img src="./images/link01.jpg" alt="" class="link-Agency">
                         </a>
@@ -125,8 +120,8 @@
     </main>
 </body>
 </html>
-<script src=" person.js"></script>  
 
+<script src="index.js"></script>
 <script>
     $(document).ready(function() {
       $('.slide-container').addClass('show');

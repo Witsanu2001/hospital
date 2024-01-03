@@ -580,6 +580,9 @@
   width: 350px;
 }
 
+.rounded{
+  width: 380px;
+}
 @media (max-width: 768px) {
   .position-sticky{
     width: 130%;
