@@ -39,7 +39,6 @@
 
 @media (max-width: 768px) {
   .welcome-text {
-    text-align: center; /* จัดให้อยู่กึ่งกลางตามแนวนอน */
     display: block;
     white-space: nowrap;
     max-width: 100%; /* ปรับขนาดให้เหมาะสม */
@@ -47,14 +46,7 @@
     margin-left: auto; /* จัดให้อยู่กึ่งกลางตามแนวนอน */
   }
 
-  .welcome-text1 {
-    display: block;
-    white-space: nowrap;
-    max-width: 100%; /* ปรับขนาดให้เหมาะสม */
-    margin-right: 10px;
-    text-align: center; /* จัดให้ข้อความอยู่ตรงกลาง */
-    margin-top: -35px;
-  }
+  
   
 }
 
@@ -187,19 +179,39 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 
+  @media (max-width: 768px) {
+    .card.shadow-sm {
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 10px; /* ปรับรูปแบบของการ์ด */
+      padding: 20px; /* เพิ่ม padding เพื่อให้ข้อความห่างออกมากขึ้น */
+      height: 350px;
+      margin-left: -45px;
+      margin-right: -60px;
+    }
+}
+
   .card-text {
     color: #333; /* เปลี่ยนสีข้อความ */
     font-weight: bold; /* ทำให้ข้อความหนาขึ้น */
     text-decoration: none;
   }
 
-
-  
-
   .text-muted {
     color: #666; /* เปลี่ยนสีข้อความที่ไม่สำคัญ */
     font-style: italic; /* ทำให้ข้อความเป็นตัวเอียง */
+
   }
+  @media (max-width: 768px) {
+    .text-muted {
+      color: #666; /* เปลี่ยนสีข้อความที่ไม่สำคัญ */
+      font-style: italic; /* ทำให้ข้อความเป็นตัวเอียง */
+      text-align: left;
+    }
+  }
+
+  
+  
   .card {
     height: 100%; /* ความสูงของการ์ด */
     margin-bottom: 30px; /* ระยะห่างด้านล่างของการ์ด */
@@ -224,6 +236,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-align: left;
+
 }
 
 .card-text::after {
@@ -235,6 +248,10 @@
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
 }
 
+.card-body{
+  margin-top: -20px;
+  margin-left: -15px;
+}
   
 
   /* เพิ่มการ์ดใหม่ที่ต้องการตั้งค่าความสูง */
@@ -270,7 +287,7 @@
   
   @media (max-width: 768px) {
     #notification {
-      width: 100%;
+      width: 130%;
       height: 100px;
       background-color: #f0f0f0;
       padding: 150px;
@@ -279,6 +296,7 @@
       justify-content: flex-start;;
       font-size: 90%;
       flex-direction: column;
+      margin-left: -35px;
     }
     #notificationImg {
       display: none; /* ซ่อนรูปภาพตั้งแต่เริ่มต้น */
@@ -296,10 +314,28 @@
       margin-top: -5px;
       font-size: 100%;
     }
-    
+    .atv{
+      font-size: 18px;
+      margin-left: -30px;
+    }
+    .btn-outline-primary{
+      margin-right: -20px;
+    }
+    .btn-sm{
+      margin-right: 0px;
+    }
 }
 
-
+.link-Agency{
+  width: 380px;
+  border-radius: 5px;
+  margin-left: -15px;
+}
+@media (max-width: 768px) {
+  .link-Agency{
+    width: 320px;
+  }
+}
 
 
 
@@ -352,6 +388,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    margin-left: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
   }
   
 
@@ -375,12 +414,12 @@
   
   /* CSS */
 .footer-left img {
-    width: 80%; /* ขนาดปกติของรูปภาพ */
-    max-width: 100%; /* ทำให้รูปภาพมีขนาดไม่เกิน 200px เพื่อป้องกันการขยายภาพเกินขนาดปกติ */
-    display: block;
-    margin: 0 auto; /* ทำให้รูปอยู่ตรงกลางในขนาดปกติ */
-    margin-top: -74px;
-    margin-left: 120px;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  margin-top: -74px;
+  margin-left: -54px;
   }
   
   /* Media Query for responsiveness */
@@ -438,6 +477,9 @@
   justify-content: space-between;
   align-items: center;
 }
+
+
+
 
 .img-card{
   margin-top: -10px;
@@ -523,12 +565,7 @@
 .fc-toolbar {
   font-size: 14px; /* ปรับขนาดตัวอักษรของ header */
 }
-#calendar {
-  background-color: #f0f0f0; /* สีพื้นหลัง */
-  border: 1px solid #ddd; /* เส้นขอบ */
-  padding: 10px; 
-  width: 340px;
-}
+
 .fc-button {
   padding: 5px 10px; /* ปรับขนาดของปุ่ม */
   font-size: 10px; /* ปรับขนาดตัวอักษร */
@@ -536,4 +573,28 @@
 
 .link-secondary a {
   text-decoration: none;
+}
+
+.position-sticky{
+  width: 350px;
+}
+
+@media (max-width: 768px) {
+  .position-sticky{
+    width: 150%;
+    padding: 30px;
+    margin-left: -60px;
+  }
+  
+  .calendar {
+    margin-left: 15px;
+  }
+}
+
+.calendar {
+  margin-left: -15px;
+}
+
+.location{
+  margin-left: -400px;
 }

@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 }
 
 // สร้าง SQL query เพื่อดึงข้อมูลจากตาราง service
-$sql = "SELECT * FROM buy";
+$sql = "SELECT * FROM index_pag";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

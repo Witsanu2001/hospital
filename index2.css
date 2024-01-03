@@ -56,9 +56,7 @@
         flex: 0 0 auto;
     }
     
-    .d-flex {
-        display: block !important;
-    }
+     
 }
 
 
@@ -311,6 +309,9 @@
       font-size: 1.2rem; /* ปรับขนาดตามที่เห็นสมควรในหน้าจอขนาดเล็ก */
       padding-bottom: 2rem; /* ปรับระยะห่างด้านล่าง */
     }
+    .btn-dropdown{
+      margin-left: -45px;
+    }
   }
 
 /* CSS */
@@ -411,11 +412,6 @@
   padding: 10px;
 }
 
-.d-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .img-card{
   margin-top: -10px;
@@ -423,71 +419,3 @@
   align-items: center;
 }
 
-/* เริ่มต้นเป็นซ่อน */
-.curtain {
-  opacity: 1;
-  transition: opacity 1s ease; /* ปรับความเร็วให้เหมาะสม */
-}
-
-
-
-.hide {
-  opacity: 0;
-}
-
-.footer-closing {
-  animation-name: slide-up;
-  animation-duration: 1s; /* ปรับความเร็วให้เหมาะสม */
-  animation-timing-function: ease;
-  animation-fill-mode: forwards; /* คงสถานะที่จบการเคลื่อนที่ */
-  display: none; /* เริ่มต้นเป็นซ่อน */
-}
-
-@keyframes slide-up {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0%);
-  }
-}
-
-@keyframes slide-up {
-  from {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-}
-
-.curtain {
-  animation-name: slide-up;
-  animation-duration: 3s; /* ระยะเวลาที่เหมาะสม */
-  animation-timing-function: ease;
-  animation-fill-mode: forwards; /* คงสถานะที่จบการเคลื่อนที่ */
-}
-
-
-.row.g-5 {
-  opacity: 0; /* กำหนดให้ไม่แสดงในเริ่มต้น */
-  transition: opacity 2s ease; /* กำหนด transition เพื่อทำให้เคลื่อนที่ช้าๆ */
-}
-
-.row.g-5.show {
-  opacity: 1; /* เมื่อเพิ่ม class show ให้แสดงเนื้อหา */
-  margin-left: 30px;
-  margin-right: 30px;
-}
-
-.row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: 0px;
-}

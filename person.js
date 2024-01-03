@@ -215,3 +215,26 @@ $(document).ready(function() {
       serviceTab.classList.add("active");
     });
   });
+  
+  var nav = document.querySelector('.link');
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 100) {
+      nav.classList.add('nav-sticky');
+    } else {
+      nav.classList.remove('nav-sticky');
+    }
+  });
+
+  // modal
+    document.getElementById('address-link').addEventListener('click', function (event) {
+        event.preventDefault();
+        var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
+            backdrop: true, // ให้ใช้หน้าจอมืดและสามารถคลิกปิดได้
+            keyboard: true // ให้ใช้ปุ่ม Escape สำหรับปิด
+        });
+        myModal.show();
+        
+        var modalContent = document.getElementById('modal-content');
+        modalContent.innerHTML = "ที่อยู่ :  57 ถ.ไสน้ำเย็น ต.ป่าตอง อ.กะทู้ จ.ภูเก็ต 83150 <br> Patong Hospital : 57 sainamyen Rd., Patong, Kathu, Phuket 83150 Thailand";
+    });

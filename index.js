@@ -18,7 +18,7 @@ $(document).ready(function() {
         // วนลูปผ่าน atvData เพื่อสร้าง messages และ images
         for (let i = 0; i < atvData.length; i++) {
           messages.push(atvData[i].atv_name); // เพิ่มข้อความจากข้อมูลที่ได้รับมา
-          images.push(`./images/news/${atvData[i].atv_img}`); // เพิ่ม URL ของรูปภาพจากข้อมูลที่ได้รับมา
+          images.push(`./images/gallery/${atvData[i].atv_img}`);
         }
 
         let index = 0;
@@ -42,7 +42,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $.ajax({
     method: 'GET',
-    url: './api/buy.php',
+    url: './api/index_pag.php',
     dataType: 'json',
     success: function(response) {
       console.log(response);
@@ -57,7 +57,7 @@ $(document).ready(function() {
             <a href="${clinicData[i].b_link}">
               <div class="card card-1 shadow-sm">
                 <div class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" style="image-rendering: optimizeQuality;">
-                  <img src="./images/${clinicData[i].b_logo}" width="100%" height="100%"/>
+                  <img src="./images/index_pag/${clinicData[i].b_logo}" width="100%" height="100%"/>
                 </div>
                 <div class="card-body">
                   <p class="card-text">${clinicData[i].b_name}</p>
@@ -83,34 +83,8 @@ $(document).ready(function() {
   });
 });
 
-// // เลือก element container ของข่าวใน HTML
-// const newsContainer = document.getElementById('newsContainer');
-
-// // สร้าง HTML สำหรับแต่ละข่าวและแทรกใน container
-// newsData.forEach((news) => {
-//   const cardElement = document.createElement('div');
-//   cardElement.classList.add('col-md-6');
-
-//   cardElement.innerHTML = `
-//   <h4 class="fst-italic">${news.section}</h4>   
-//     <div class="card card-1 shadow-sm">     
-//       <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" style="image-rendering: optimizeQuality;">
-//         <image href="${news.image}" width="100%" height="100%" />
-//       </svg>
-//       <div class="card-body">
-//         <p class="card-text">${news.title}</p>
-//         <div class="d-flex justify-content-between align-items-center">
-//           <small class="text-muted">${news.time}</small>
-//         </div>
-//       </div> 
-//     </div>
-//   `;
-
-//   newsContainer.appendChild(cardElement);
-// });
 
 
-// ตรวจสอบขนาดหน้าจอเพื่อเปลี่ยนแสดงเมนูเป็นปุ่ม dropdown
 $(document).ready(function () {
   // เรียกฟังก์ชั่นเมื่อโหลดหน้าเว็บ
   checkWidth();
@@ -209,6 +183,27 @@ refreshButton.addEventListener('click', () => {
     notificationImg.src = imageUrl + '?time=' + new Date().getTime();
 });
 
+// modal
+document.getElementById('copy-button').addEventListener('click', function () {
+  var modalContent = "ที่อยู่ :  57 ถ.ไสน้ำเย็น ต.ป่าตอง อ.กะทู้ จ.ภูเก็ต 83150 <br> Patong Hospital : 57 sainamyen Rd., Patong, Kathu, Phuket 83150 Thailand";
 
+  // ตรวจสอบว่า navigator.clipboard สามารถใช้งานได้หรือไม่
+  if (!navigator.clipboard) {
+      console.error('บราวเซอร์ไม่รองรับการเข้าถึง Clipboard');
+      return;
+  }
+
+  // เขียนข้อความลง Clipboard
+  navigator.clipboard.writeText(modalContent)
+      .then(() => {
+          var myModal = bootstrap.Modal.getInstance(document.getElementById('myModal'));
+          myModal.hide();
+          alert('คัดลอกข้อความแล้ว!');
+      })
+      .catch(err => {
+          console.error('ไม่สามารถคัดลอกข้อความได้: ', err);
+          alert('เกิดข้อผิดพลาดในการคัดลอกข้อความ');
+      });
+});
 
 

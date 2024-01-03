@@ -2,7 +2,7 @@
 require('./api/connect.php');
 
 $objCon = connectDB();
-$strSQL = "SELECT * FROM ceo_manage";
+$strSQL = "SELECT * FROM table_doctor";
 $objQuery = mysqli_query($objCon, $strSQL);
 $objResult = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
 ?>
@@ -38,17 +38,16 @@ $objResult = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
 </div>
     <br>
     <div class="row g-5">
-      <div class="col-md-8">        
+        <div>
+          
         <h4 class="pb-4 mb-4 fst-italic border-bottom d-flex">                      
             <?php include "button-menu.php"; ?>
-            <div class="welcome-text text-center">รู้จักกับองค์กร</div>
-        </h4>       
-        
+            <div class="welcome-text text-center"><?php echo $objResult['doctor_name']?></div>
+        </h4>
         </div>
         <center>
         <div class="row">
-        <img src="./images/<?php echo $objResult['ceo_img']?>" alt="">
-        <img src="./images/<?php echo $objResult['manage_img']?>" alt="">
+        <img src="./images/<?php echo $objResult['doctor_img']?>" alt="">
         </div>
         
           

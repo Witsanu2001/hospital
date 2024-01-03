@@ -15,19 +15,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-
     <link rel="stylesheet" href="index2.css">
-    
-
-
-    <!-- Bootstrap core CSS -->
     <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    
-    <!-- Custom styles for this template -->
     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="blog.css" rel="stylesheet">
+   
+    </style>
   </head>
   <body>
   <div class="scroll-to-top">
@@ -45,10 +40,10 @@
     <?php include "slide-page.php"; ?>
     </div>
 
-    <nav class="nav d-flex flex-wrap justify-content-between">
-    <?php include "nav-link.php"; ?>
-</nav>
-</div>
+    <nav class="nav link d-flex flex-wrap justify-content-between">
+      <?php include "nav-link.php"; ?>
+    </nav>
+
 
     <br>
     <div class="row g-5">
@@ -62,8 +57,16 @@
             <?php include "button-menu.php"; ?>
             </div>
         </div>
+        <br>
+        <br>
 
-        <div class="container mt-3" style="cursor: pointer;">
+        
+        
+
+       
+        
+    
+    <div class="container mt-3">
           <ul class="nav nav-tabs nav-justified">
               <li class="nav-item">
                   <a id="service-tab" class="nav-link btn-outline-primary active">งานบริการ</a>
@@ -73,10 +76,8 @@
               </li>
           </ul>
         </div>
-        
     <br>
     <br>
-
     <!-- ส่วนของการ์ด -->
     <div class="row" style="cursor: pointer;">
         
@@ -87,15 +88,23 @@
                 <!-- ข้อมูลของคลินิค -->
             </div>
     </div>
-</main>
-
-        <br>
+    </div>
+    <br>
         <br>
         <br>
         <br>
 <footer class="blog-footer footer">
   <?php include "footer.php"; ?>
 </footer>
+</main>
+
+<!-- Modal -->
+<div class="modal" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<?php include "modal.php" ?>
+</div>
+
+
+        
   </body>
 </html>
 
